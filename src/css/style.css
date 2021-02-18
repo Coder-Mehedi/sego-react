@@ -20655,7 +20655,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 /*$primary  : #7356f1 !default;*/
 [data-theme-version="transparent"] {
-  background: url("../images/body/12.jpg");
+  /* background: url("../images/body/12.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -23748,7 +23748,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background: url(../images/svg/cd-arrow.svg) no-repeat 0 0; }
+    /* background: url(../images/svg/cd-arrow.svg) no-repeat 0 0; */
+   }
   .cd-h-timeline__navigation:hover {
     border-color: #2BC155; }
 
@@ -28537,7 +28538,7 @@ span#counter {
     font-weight: 600; }
 
 .profile-bx .profile-image {
-  background-image: url("../images/circle.png");
+  /* background-image: url("../images/circle.png"); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center; }

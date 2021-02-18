@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import testimonial1 from "../../../../../images/testimonial/1.png";
+// import testimonial1 from "../../../../../images/testimonial/1.png";
 
 function SampleNextArrow(props) {
   const { onClick } = props;

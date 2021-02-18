@@ -16,7 +16,7 @@ const App = ({ width }) => {
   body.setAttribute("data-layout", "vertical");
   body.setAttribute("data-nav-headerbg", "color_1");
   body.setAttribute("data-headerbg", "color_1");
-  body.setAttribute("data-sidebar-style", "compact");
+  body.setAttribute("data-sidebar-style", "full");
   body.setAttribute("data-sibebarbg", "color_1");
   body.setAttribute("data-primary", "color_1");
   body.setAttribute("data-sidebar-position", "fixed");
@@ -25,10 +25,10 @@ const App = ({ width }) => {
   body.setAttribute("direction", "ltr");
 
   width >= 768 && width < 1300
-    ? body.setAttribute("data-sidebar-style", "mini")
+    ? body.setAttribute("data-sidebar-style", "full")
     : width <= 768
     ? body.setAttribute("data-sidebar-style", "overlay")
-    : body.setAttribute("data-sidebar-style", "compact");
+    : body.setAttribute("data-sidebar-style", "full");
 
   return (
     <Fragment>
