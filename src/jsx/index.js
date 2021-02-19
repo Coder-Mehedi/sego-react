@@ -12,7 +12,7 @@ import "./step.css";
 import Nav from "./layouts/nav";
 import Footer from "./layouts/Footer";
 /// Dashboard
-// import Home from "./components/Dashboard/Home";
+import Home from "./components/Dashboard/Home";
 // import Analytics from "./components/Dashboard/Analytics";
 // import OrderList from "./components/Dashboard/OrderList";
 // import CustomerList from "./components/Dashboard/CustomerList";
@@ -98,7 +98,7 @@ import Error503 from "./pages/Error503";
 const Markup = () => {
   const routes = [
     /// Dashboard
-    // { url: "", component: Home },
+    { url: "", component: Home },
     // { url: "analytics", component: Analytics },
     // { url: "review", component: Reviews },
     // { url: "order-list", component: OrderList },
