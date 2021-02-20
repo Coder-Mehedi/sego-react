@@ -1,14 +1,15 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
 
 //** Import Image */
-// import avatar1 from "../../../images/avatar/1.jpg";
-// import map from "../../../images/map.jpg";
-// import customers10 from "../../../images/customers/10.jpg";
-// import customers11 from "../../../images/customers/11.jpg";
-// import customers12 from "../../../images/customers/12.jpg";
-// import FrontViewSlider from "../Omah/PropertyDetails/FrontViewSlider";
-// import ImageGallery from "../Omah/PropertyDetails/ImageGallery";
+import map from "../../../images/map.png";
+import profile from "../../../images/profile/19.jpg";
+import profile2 from "../../../images/profile/18.jpg";
+import Product5 from "../../../images/card/pic5.jpg";
+import Product6 from "../../../images/card/pic6.jpg";
+import Product7 from "../../../images/card/pic7.jpg";
 
 function OrderId() {
   return (
@@ -43,16 +44,16 @@ function OrderId() {
           </div>
         </div>
       </div>
-      <div className="dropdown mb-md-4 mb-2 text-right">
-        <div className="btn btn-success dropdown-toggle" data-toggle="dropdown">
+      <Dropdown className="dropdown mb-md-4 mb-2 text-right">
+        <Dropdown.Toggle className="i-false btn btn-success dropdown-toggle" data-toggle="dropdown">
           <svg width={22} className="mr-2" height={28} viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16647 27.9558C9.25682 27.9856 9.34946 28.0001 9.44106 28.0001C9.71269 28.0001 9.97541 27.8732 10.1437 27.6467L21.5954 12.2248C21.7926 11.9594 21.8232 11.6055 21.6746 11.31C21.526 11.0146 21.2236 10.8282 20.893 10.8282H13.1053V0.874999C13.1053 0.495358 12.8606 0.15903 12.4993 0.042327C12.1381 -0.0743215 11.7428 0.0551786 11.5207 0.363124L0.397278 15.7849C0.205106 16.0514 0.178364 16.403 0.327989 16.6954C0.477614 16.9878 0.77845 17.1718 1.10696 17.1718H8.56622V27.125C8.56622 27.5024 8.80816 27.8373 9.16647 27.9558ZM2.81693 15.4218L11.3553 3.58389V11.7032C11.3553 12.1865 11.7471 12.5782 12.2303 12.5782H19.1533L10.3162 24.479V16.2968C10.3162 15.8136 9.92444 15.4218 9.44122 15.4218H2.81693Z" fill="#fff" /></svg>
           <span>ON DELIVERY</span>
-        </div>
-        <div className="dropdown-menu dropdown-menu-left">
-          <a className="dropdown-item" href="#">A To Z List</a>
-          <a className="dropdown-item" href="#">Z To A List</a>
-        </div>
-      </div>
+        </Dropdown.Toggle>
+        <Dropdown.Menu className="dropdown-menu dropdown-menu-left">
+          <Dropdown.Item className="dropdown-item" to="#">A To Z List</Dropdown.Item>
+          <Dropdown.Item className="dropdown-item" to="#">Z To A List</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
       <div className="row">
         <div className="col-xl-9 col-xxl-8">
           <div className="row">
@@ -60,7 +61,7 @@ function OrderId() {
               <div className="card">
                 <div className="card-body">
                   <div className="map-bx">
-                    <img src="images/map.png" alt /> 
+                    <img src={map} alt="map" /> 
                     <div className="map-content">
                       <h4 className="fs-20 text-black">Track Orders</h4>
                       <span className="fs-12">Lorem ipsum dolor sit</span>
@@ -70,7 +71,7 @@ function OrderId() {
                   <div className="row">
                     <div className="col-md-6">
                       <div className="d-flex align-items-center mb-md-0 mb-4">
-                        <img src="images/profile/18.jpg" alt className="rounded-circle mr-3" width={68} />
+                        <img src={profile2} alt="profile2" className="rounded-circle mr-3" width={68} />
                         <div>
                           <h4 className="fs-20 text-black">Geovanny Van Houten</h4>
                           <span className="fs-14">ID 412455</span>
@@ -118,10 +119,10 @@ function OrderId() {
                         <tr className="alert alert-dismissible border-0">
                           <td>
                             <div className="media">
-                              <a href="ecom-product-detail.html"><img className="mr-3 img-fluid rounded" width={85} src="images/card/pic5.jpg" alt="DexignZone" /></a>
+                              <Link to="ecom-product-detail"><img className="mr-3 img-fluid rounded" width={85} src={Product5} alt="Product5" /></Link>
                               <div className="media-body">
-                                <small className="mt-0 mb-1 font-w500"><a className="text-primary" href="javascript:void(0);">MAIN COURSE</a></small>
-                                <h5 className="mt-0 mb-2 mb-4"><a className="text-black" href="ecom-product-detail.html">Watermelon juice with ice</a></h5>
+                                <small className="mt-0 mb-1 font-w500"><Link className="text-primary" to="#">MAIN COURSE</Link></small>
+                                <h5 className="mt-0 mb-2 mb-4"><Link className="text-black" to="product-detail">Watermelon juice with ice</Link></h5>
                                 <div className="star-review fs-14">
                                   <i className="fa fa-star text-orange" />
                                   <i className="fa fa-star text-orange" />
@@ -143,16 +144,16 @@ function OrderId() {
                             <h4 className="my-0 text-black font-w600">$4.12</h4>
                           </td>
                           <td>
-                            <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></a>
+                            <Link to="#" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></Link>
                           </td>
                         </tr>
                         <tr className="alert alert-dismissible border-0">
                           <td>
                             <div className="media">
-                              <a href="ecom-product-detail.html"><img className="mr-3 img-fluid rounded" width={85} src="images/card/pic6.jpg" alt="DexignZone" /></a>
+                              <Link to="ecom-product-detail"><img className="mr-3 img-fluid rounded" width={85} src={Product6} alt="Product6" /></Link>
                               <div className="media-body">
-                                <small className="mt-0 mb-1 font-w500"><a className="text-primary" href="javascript:void(0);">MAIN COURSE</a></small>
-                                <h5 className="mt-0 mb-2 text-black mb-4"><a className="text-black" href="ecom-product-detail.html">Chicken curry special with cucumber</a></h5>
+                                <small className="mt-0 mb-1 font-w500"><Link className="text-primary" to="#">MAIN COURSE</Link></small>
+                                <h5 className="mt-0 mb-2 text-black mb-4"><Link className="text-black" to="ecom-product-detail">Chicken curry special with cucumber</Link></h5>
                                 <div className="star-review fs-14">
                                   <i className="fa fa-star text-orange" />
                                   <i className="fa fa-star text-orange" />
@@ -174,16 +175,16 @@ function OrderId() {
                             <h4 className="my-0 text-black font-w600">$44.97</h4>
                           </td>
                           <td>
-                            <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></a>
+                            <Link to="#" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></Link>
                           </td>
                         </tr>
                         <tr className="alert alert-dismissible border-0">
                           <td>
                             <div className="media">
-                              <a href="ecom-product-detail.html"><img className="mr-3 img-fluid rounded" width={85} src="images/card/pic7.jpg" alt="DexignZone" /></a>
+                              <Link to="ecom-product-detail"><img className="mr-3 img-fluid rounded" width={85} src={Product7} alt="Product7" /></Link>
                               <div className="media-body">
-                                <small className="mt-0 mb-1 font-w500"><a className="text-primary" href="javascript:void(0);">MAIN COURSE</a></small>
-                                <h5 className="mt-0 mb-2 text-black mb-4"><a className="text-black" href="ecom-product-detail.html">Italiano pizza with garlic</a></h5>
+                                <small className="mt-0 mb-1 font-w500"><Link className="text-primary" to="#">MAIN COURSE</Link></small>
+                                <h5 className="mt-0 mb-2 text-black mb-4"><Link className="text-black" to="ecom-product-detail">Italiano pizza with garlic</Link></h5>
                                 <div className="star-review fs-14">
                                   <i className="fa fa-star text-orange" />
                                   <i className="fa fa-star text-orange" />
@@ -205,7 +206,7 @@ function OrderId() {
                             <h4 className="my-0 text-black font-w600">$15.44</h4>
                           </td>
                           <td>
-                            <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></a>
+                            <Link to="#" data-dismiss="alert" aria-label="Close" className=" fs-28 text-danger "><i className="las la-times-circle" /></Link>
                           </td>
                         </tr>
                       </tbody></table>
@@ -220,9 +221,9 @@ function OrderId() {
             <div className="col-xl-12 col-sm-6">
               <div className="card">
                 <div className="card-body text-center">
-                  <img src="images/profile/19.jpg" alt width={130} className="rounded-circle mb-4" />
+                  <img src={profile} alt="profile" width={130} className="rounded-circle mb-4" />
                   <h3 className="fs-18 text-black font-w600 mb-3">James Witwitcky</h3>
-                  <a href="javascript:void(0)" className="btn btn-primary light btn-sm btn-rounded">Customer</a>
+                  <Link to="#" className="btn btn-primary light btn-sm btn-rounded">Customer</Link>
                 </div>
                 <div className="card-body bg-light rounded-top">
                   <h3 className="fs-18 text-black font-w600">Note Order</h3>
@@ -252,31 +253,31 @@ function OrderId() {
                     <ul className="timeline">
                       <li>
                         <div className="icon bg-dark" />
-                        <a className="timeline-panel text-muted" href="javascript:void(0);">
+                        <Link className="timeline-panel text-muted" to="#">
                           <h4 className="mb-2 ">Order Delivered</h4>
                           <p className="fs-15 mb-0 ">Sat, 23 Jul 2020, 01:24 PM</p>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <div className="icon bg-primary" />
-                        <a className="timeline-panel text-muted" href="javascript:void(0);">
+                        <Link className="timeline-panel text-muted" to="#">
                           <h4 className="mb-2">On Delivery</h4>
                           <p className="fs-15 mb-0 ">Sat, 23 Jul 2020, 01:24 PM</p>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <div className="icon bg-primary" />
-                        <a className="timeline-panel text-muted" href="javascript:void(0);">
+                        <Link className="timeline-panel text-muted" to="#">
                           <h4 className="mb-2">Payment Success</h4>
                           <p className="fs-15 mb-0 ">Fri, 22 Jul 2020, 10:44 AM</p>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <div className="icon bg-primary las" />
-                        <a className="timeline-panel text-muted" href="javascript:void(0);">
+                        <Link className="timeline-panel text-muted" to="#">
                           <h4 className="mb-2">Order Created</h4>
                           <p className="fs-15 mb-0 ">Thu, 21 Jul 2020, 11:49 AM</p>
-                        </a>
+                        </Link>
                       </li>
                     </ul>	
                   </div>

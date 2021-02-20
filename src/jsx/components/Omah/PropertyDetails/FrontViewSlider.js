@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import card1 from "../../../../images/card/1.jpg";
-// import card2 from "../../../../images/card/2.jpg";
-// import card3 from "../../../../images/card/3.jpg";
-// import card4 from "../../../../images/card/4.jpg";
+import card1 from "../../../../images/card/1.jpg";
+import card2 from "../../../../images/card/2.jpg";
+import card3 from "../../../../images/card/3.jpg";
+import card4 from "../../../../images/card/4.jpg";
 
 const FrontViewSlider = () => {
   const settings = {

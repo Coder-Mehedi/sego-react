@@ -138,7 +138,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Watermelon Juice with Ice</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -175,7 +175,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -212,7 +212,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Mozarella Pizza with Random Topping</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -249,7 +249,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -286,7 +286,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -323,7 +323,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Chicken Kebab from Turkish with Garlic</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Chicken Kebab from Turkish with Garlic</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -364,7 +364,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Watermelon Juice with Ice</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -401,7 +401,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -438,7 +438,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3" src={card_pic2} alt="card_pic2" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Mozarella Pizza with Random Topping</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -475,7 +475,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -512,7 +512,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -553,7 +553,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -590,7 +590,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Mozarella Pizza with Random Topping</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -627,7 +627,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -664,7 +664,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -705,7 +705,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Watermelon Juice with Ice</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -742,7 +742,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt={card_pic9} />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -779,7 +779,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Mozarella Pizza with Random Topping</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -816,7 +816,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -853,7 +853,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -890,7 +890,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -931,7 +931,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Watermelon Juice with Ice</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -968,7 +968,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1005,7 +1005,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1042,7 +1042,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1083,7 +1083,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Watermelon Juice with Ice</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1120,7 +1120,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Orange Juice Special Smoothy with Sugar</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1157,7 +1157,7 @@ function Analytics() {
                       <div className="media mb-4 align-items-center">
                         <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
                         <div className="media-body">
-                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="d-flex mb-2">
                             <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
@@ -1233,7 +1233,7 @@ function Analytics() {
               <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
                 <span className="num">#1</span>
                 <div className="mr-auto pr-3">
-                  <Link to="post-details.html"><h2 className="text-black fs-14">Medium Spicy Spagethi Italiano</h2></Link>
+                  <Link to="post-details"><h2 className="text-black fs-14">Medium Spicy Spagethi Italiano</h2></Link>
                   <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
                 </div>
                 <img src={menu9} alt="menu9" width={60} className="rounded" />
@@ -1241,7 +1241,7 @@ function Analytics() {
               <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
                 <span className="num">#2</span>
                 <div className="mr-auto pr-3">
-                  <Link to="post-details.html"><h2 className="text-black fs-14">Watermelon juice with ice</h2></Link>
+                  <Link to="post-details"><h2 className="text-black fs-14">Watermelon juice with ice</h2></Link>
                   <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
                 </div>
                 <img src={menu10} alt="menu9" width={60} className="rounded" />
@@ -1249,7 +1249,7 @@ function Analytics() {
               <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
                 <span className="num">#3</span>
                 <div className="mr-auto pr-3">
-                  <Link to="post-details.html"><h2 className="text-black fs-14">Chicken curry special with cucumber</h2></Link>
+                  <Link to="post-details"><h2 className="text-black fs-14">Chicken curry special with cucumber</h2></Link>
                   <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
                 </div>
                 <img src={menu11} alt="menu11" width={60} className="rounded" />
@@ -1257,7 +1257,7 @@ function Analytics() {
               <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
                 <span className="num">#4</span>
                 <div className="mr-auto pr-3">
-                  <Link to="post-details.html"><h2 className="text-black fs-14">Italiano Pizza With Garlic</h2></Link>
+                  <Link to="post-details"><h2 className="text-black fs-14">Italiano Pizza With Garlic</h2></Link>
                   <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
                 </div>
                 <img src={menu12} alt="menu12" width={60} className="rounded" />
@@ -1265,7 +1265,7 @@ function Analytics() {
               <div className="d-flex tr-row align-items-center">
                 <span className="num">#5</span>
                 <div className="mr-auto pr-3">
-                  <Link to="post-details.html"><h2 className="text-black fs-14">Tuna Soup spinach with himalaya salt</h2></Link>
+                  <Link to="post-details"><h2 className="text-black fs-14">Tuna Soup spinach with himalaya salt</h2></Link>
                   <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
                 </div>
                 <img src={menu9} alt="menu9" width={60} className="rounded" />
@@ -1309,9 +1309,9 @@ function Analytics() {
                   <Tab.Pane eventKey="monthly" className="tab-pane fade" id="monthly">
                     <div className="height500 dz-scroll loadmore-content" id="sellingItemsContent">
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5}alt="dish_pic5" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5}alt="dish_pic5" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> BURGER</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1333,9 +1333,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Pizza Meal for Kids (Small size)</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> PIZZA</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1357,9 +1357,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1381,9 +1381,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> PIZZA</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1405,9 +1405,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Watermelon juice with ice</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;">BURGER</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1436,9 +1436,9 @@ function Analytics() {
                   <Tab.Pane eventKey="weekly" className="tab-pane fade" id="weekly">
                     <div className="height500 dz-scroll loadmore-content" id="sellingItems2Content">
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Pizza Meal for Kids (Small size)</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;">BURGER</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1460,9 +1460,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;">PIZZA</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1484,9 +1484,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1}alt="dish_pic1" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1}alt="dish_pic1" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1515,9 +1515,9 @@ function Analytics() {
                   <Tab.Pane eventKey="today" className="tab-pane fade" id="today">
                     <div className="height500 dz-scroll loadmore-content" id="sellingItems3Content">
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1539,9 +1539,9 @@ function Analytics() {
                         </div>
                       </div>
                       <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
-                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                        <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
                         <div className="media-body col-6 px-0">
-                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail">Watermelon juice with ice</Link></h5>
                           <small className="font-w500 mb-3"><Link className="text-primary" to="#;">PIZZA</Link></small>
                           <span className="text-secondary mr-2 fo" />
                           <ul className="fs-14 list-inline">
@@ -1592,9 +1592,9 @@ function Analytics() {
                 <div className="card-body p-0 pt-3">
                   <div className="media items-list-1">
                     <span className="number col-1 px-0 align-self-center">#1</span>
-                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                    <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
                     <div className="media-body col-sm-4 col-xxl-5 px-0">
-                      <h5 className="mt-0 mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <h5 className="mt-0 mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                       <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
                     </div>
                     <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
@@ -1609,9 +1609,9 @@ function Analytics() {
                   </div>
                   <div className="media items-list-1">
                     <span className="number col-1 px-0 align-self-center">#2</span>
-                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                    <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
                     <div className="media-body col-sm-4 col-xxl-5 px-0">
-                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                       <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">JUICE</Link></small>
                     </div>
                     <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
@@ -1626,9 +1626,9 @@ function Analytics() {
                   </div>
                   <div className="media items-list-1">
                     <span className="number col-1 px-0 align-self-center">#3</span>
-                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                    <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
                     <div className="media-body col-sm-4 col-xxl-5 px-0">
-                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Chicken curry special with cucumber</Link></h5>
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail">Chicken curry special with cucumber</Link></h5>
                       <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
                     </div>
                     <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
@@ -1643,9 +1643,9 @@ function Analytics() {
                   </div>
                   <div className="media items-list-1">
                     <span className="number col-1 px-0 align-self-center">#4</span>
-                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
+                    <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
                     <div className="media-body col-sm-4 col-xxl-5 px-0">
-                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail">Watermelon juice with ice</Link></h5>
                       <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
                     </div>
                     <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
@@ -1660,9 +1660,9 @@ function Analytics() {
                   </div>
                   <div className="media items-list-1">
                     <span className="number col-1 px-0 align-self-center">#5</span>
-                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5} alt="dish_pic5" /></Link>
+                    <Link to="ecom-product-detail"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5} alt="dish_pic5" /></Link>
                     <div className="media-body col-sm-4 col-xxl-5 px-0">
-                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                       <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">BURGER</Link></small>
                     </div>
                     <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
@@ -1738,10 +1738,10 @@ function Analytics() {
                     <div className="row height750 dz-scroll loadmore-content" id="favourite-itemsContent">
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="mb-3"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1755,10 +1755,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Pizza Meal for Kids (Small size)</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1772,10 +1772,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1789,10 +1789,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1806,10 +1806,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1823,10 +1823,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1847,10 +1847,10 @@ function Analytics() {
                     <div className="row height750 dz-scroll loadmore-content" id="favourite-items2Content">
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1864,10 +1864,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Pizza Meal for Kids (Small size)</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1881,10 +1881,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Meidum Spicy Spagethi Italiano</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1898,10 +1898,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1922,10 +1922,10 @@ function Analytics() {
                     <div className="row height750 dz-scroll loadmore-content" id="favourite-items3Content">
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1939,10 +1939,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1956,10 +1956,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Tuna soup spinach with himalaya salt</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />
@@ -1973,10 +1973,10 @@ function Analytics() {
                       </div>
                       <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
                         <div className="media mb-4">
-                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                          <Link to="ecom-product-detail"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
                         </div>
                         <div className="info">
-                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
                           <div className="star-review fs-14 mb-3">
                             <i className="fa fa-star text-orange" />
                             <i className="fa fa-star text-orange" />

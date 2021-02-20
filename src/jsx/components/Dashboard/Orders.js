@@ -95,18 +95,18 @@ function Orders() {
     </div>
   </div>
       <div className="d-sm-flex mb-lg-4 mb-2">
-    <div className="dropdown mb-2 ml-auto mr-3">
-      <a href="javascript:void(0)" className="btn btn-primary btn-rounded light" data-toggle="dropdown" aria-expanded="false">
+    <Dropdown className="dropdown mb-2 ml-auto mr-3">
+      <Dropdown.Toggle to="#" className="i-false btn btn-primary btn-rounded light" data-toggle="dropdown" aria-expanded="false">
         <i className="las la-bolt scale5 mr-3" />
         All Status
         <i className="las la-angle-down ml-3" />
-      </a>
-      <div className="dropdown-menu dropdown-menu-center">
-        <a className="dropdown-item" href="javascript:void(0);"><span className="text-primary">On Delivery</span></a>
-        <a className="dropdown-item" href="javascript:void(0);"><span className="text-primary">New Order</span></a>
-        <a className="dropdown-item" href="javascript:void(0);"><span className="text-success">Delivery</span></a>
-      </div>
-    </div>
+      </Dropdown.Toggle>
+      <Dropdown.Menu className="dropdown-menu dropdown-menu-center">
+        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">On Delivery</span></Dropdown.Item>
+        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">New Order</span></Dropdown.Item>
+        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-success">Delivery</span></Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
     <input className="d-inline-block form-control date-button btn btn-primary light btn-rounded" id="timepicker" placeholder="Today" />
   </div>
       <div className="row">
@@ -138,19 +138,19 @@ function Orders() {
                   </svg>On Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" className="nav-link  ai-icon" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -163,19 +163,19 @@ function Orders() {
                 <span className="text-primary">New Order</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -191,19 +191,19 @@ function Orders() {
                   </svg>On Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -216,19 +216,19 @@ function Orders() {
                 <span className="text-primary">New Order</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -244,19 +244,19 @@ function Orders() {
                   </svg>On Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -272,19 +272,19 @@ function Orders() {
                   </svg>On Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -300,19 +300,19 @@ function Orders() {
                   </svg>On Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -325,19 +325,19 @@ function Orders() {
                 <span className="text-success">Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -350,19 +350,19 @@ function Orders() {
                 <span className="text-success">Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -375,19 +375,19 @@ function Orders() {
                 <span className="text-success">Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
             <tr className="alert alert-dismissible border-0">
@@ -400,19 +400,19 @@ function Orders() {
                 <span className="text-success">Delivery</span>
               </td>
               <td>
-                <div className="dropdown">
-                  <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <Dropdown className="dropdown">
+                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
                     <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    <a className="dropdown-item" href="javascript:void(0);"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</a>
-                    <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</a>
-                  </div>
-                </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </td>
             </tr>
           </tbody>
