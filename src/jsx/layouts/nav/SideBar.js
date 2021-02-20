@@ -54,11 +54,11 @@ class SideBar extends Component {
     /// Active menu
     let deshBoard = [
         "",
+        "orders",
+        "order-id",
+        "general-customers",
         "analytics",
-        "order-list",
-        "customer-list",
         "review",
-        "property-details",
       ],
       app = [
         "app-profile",
@@ -166,6 +166,32 @@ class SideBar extends Component {
                 </li>
                 <li>
                   <Link
+                    className={`${path === "orders" ? "mm-active" : ""}`}
+                    to="/orders"
+                  >
+                    Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`${
+                      path === "order-id" ? "mm-active" : ""
+                    }`}
+                    to="/order-id"
+                  >
+                    Order ID
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`${path === "general-customers" ? "mm-active" : ""}`}
+                    to="/general-customers"
+                  >
+                    General Customers
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     className={`${path === "analytics" ? "mm-active" : ""}`}
                     to="/analytics"
                   >
@@ -178,32 +204,6 @@ class SideBar extends Component {
                     to="/review"
                   >
                     Review
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "order-list" ? "mm-active" : ""}`}
-                    to="/order-list"
-                  >
-                    Order List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "customer-list" ? "mm-active" : ""}`}
-                    to="/customer-list"
-                  >
-                    Customer List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${
-                      path === "property-details" ? "mm-active" : ""
-                    }`}
-                    to="/property-details"
-                  >
-                    Property Details
                   </Link>
                 </li>
               </ul>
@@ -785,7 +785,7 @@ class SideBar extends Component {
 
           <div className="copyright">
             <p className="fs-14 font-w200">
-              <strong className="font-w400">Omah Dashboard</strong> ©All Rights
+              <strong className="font-w400">Sego Restaurant Admin Dashboard</strong> ©All Rights
               Reserved
             </p>
             <p>by DexignZone</p>

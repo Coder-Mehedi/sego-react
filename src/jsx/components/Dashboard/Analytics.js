@@ -1,558 +1,2007 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
-import AnalyticsDonutChart from "../Omah/Analytics/DonutChart";
-// Map
-import World from "@svg-maps/world";
-import { SVGMap } from "react-svg-map";
+import { Dropdown, Tab, Nav } from "react-bootstrap";
+import DoughnutChart3 from "../Sego/Analytics/DoughnutChart3";
+import ActivityLineChart from "../Sego/Analytics/ActivityLineChart";
 
-// Apex Chart
-import loadable from "@loadable/component";
-import pMinDelay from "p-min-delay";
-import WidgetChart1 from "../Omah/Analytics/WidgetChart1";
-import WidgetChart2 from "../Omah/Analytics/WidgetChart2";
-const ChartBar1 = loadable(() =>
-  pMinDelay(import("../Omah/Analytics/ChartBar1"), 500)
-);
-const ChartBar2 = loadable(() =>
-  pMinDelay(import("../Omah/Analytics/ChartBar2"), 500)
-);
-const ChartTimeLine = loadable(() =>
-  pMinDelay(import("../Omah/Analytics/ChartTimeline"), 500)
-);
-const RedialBar = loadable(() =>
-  pMinDelay(import("../Omah/Analytics/RadialBar"), 500)
-);
+
+//Images
+  //Card
+    import card_pic2 from "../../../images/card/pic2.jpg";
+    import card_pic4 from "../../../images/card/pic4.jpg";
+    import card_pic8 from "../../../images/card/pic8.jpg";
+    import card_pic9 from "../../../images/card/pic9.jpg";
+    import card_pic11 from "../../../images/card/pic11.jpg";
+  
+  // Menus
+    import menu9 from "../../../images/menus/9.png";
+    import menu10 from "../../../images/menus/10.png";
+    import menu11 from "../../../images/menus/11.png";
+    import menu12 from "../../../images/menus/12.png";
+
+  // Dish
+    import dish_pic1 from "../../../images/dish/pic1.jpg";
+    import dish_pic2 from "../../../images/dish/pic2.jpg";
+    import dish_pic3 from "../../../images/dish/pic3.jpg";
+    import dish_pic4 from "../../../images/dish/pic4.jpg";
+    import dish_pic5 from "../../../images/dish/pic5.jpg";
+    import dish_pic6 from "../../../images/dish/pic6.jpg";
+    import dish_pic7 from "../../../images/dish/pic7.jpg";
+    import dish_pic8 from "../../../images/dish/pic8.jpg";
+    import dish_pic9 from "../../../images/dish/pic9.jpg";
+    import dish_pic10 from "../../../images/dish/pic10.jpg";
+    import dish_pic11 from "../../../images/dish/pic11.jpg";
+
+  // Svg
+    import IcStat3 from "../../../images/svg/ic_stat3.svg";
+
 
 function Analytics() {
   return (
     <>
-      <div className="form-head page-titles d-flex  align-items-center">
-        <div className="mr-auto  d-lg-block">
-          <h2 className="text-black font-w600">Analytics</h2>
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item active">
-              <Link to="/analytics">Property</Link>
-            </li>
-            <li className="breadcrumb-item">
-              <Link to="/analytics">Analytics</Link>
-            </li>
-          </ol>
+      <div className="modal fade" id="addOrderModalside">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Add Menus</h5>
+              <button type="button" className="close" data-dismiss="modal"><span>×</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="form-group">
+                  <label className="text-black font-w500">Food Name</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label className="text-black font-w500">Order Date</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label className="text-black font-w500">Food Price</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <button type="button" className="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <Link to="/analytics" className="btn btn-primary rounded light mr-3">
-          Refresh
-        </Link>
-        <Link to="/analytics" className="btn btn-primary rounded">
-          <i className="flaticon-381-settings-2 mr-0" />
-        </Link>
+      </div>
+      <div className="d-sm-flex d-block">
+        <p className="fs-18 mr-auto mb-sm-4 mb-3">Here is your restaurant<br /> summary with graph view</p>
+        <Dropdown className="dropdown custom-dropdown mb-sm-4 mb-3">
+          <Dropdown.Toggle className="btn i-false btn-sm btn-primary light d-flex align-items-center svg-btn" role="button" data-toggle="dropdown" aria-expanded="false">
+            <svg width={28} height={28} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M22.4281 2.856H21.8681V1.428C21.8681 0.56 21.2801 0 20.4401 0C19.6001 0 19.0121 0.56 19.0121 1.428V2.856H9.71606V1.428C9.71606 0.56 9.15606 0 8.28806 0C7.42006 0 6.86006 0.56 6.86006 1.428V2.856H5.57206C2.85606 2.856 0.560059 5.152 0.560059 7.868V23.016C0.560059 25.732 2.85606 28.028 5.57206 28.028H22.4281C25.1441 28.028 27.4401 25.732 27.4401 23.016V7.868C27.4401 5.152 25.1441 2.856 22.4281 2.856ZM5.57206 5.712H22.4281C23.5761 5.712 24.5841 6.72 24.5841 7.868V9.856H3.41606V7.868C3.41606 6.72 4.42406 5.712 5.57206 5.712ZM22.4281 25.144H5.57206C4.42406 25.144 3.41606 24.136 3.41606 22.988V12.712H24.5561V22.988C24.5841 24.136 23.5761 25.144 22.4281 25.144Z" fill="#2F4CDD" /></g></svg>
+            <div className="text-left ml-3">
+              <span className="d-block fs-16">Filter Periode</span>
+              <small className="d-block fs-13">4 June 2020 - 4 July 2020</small>
+            </div>
+            <i className="fa fa-angle-down scale5 ml-3" />
+          </Dropdown.Toggle>
+          <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+            <Dropdown.Item className="dropdown-item" to="#">4 June 2020 - 4 July 2020</Dropdown.Item>
+            <Dropdown.Item className="dropdown-item" to="#">5 july 2020 - 4 Aug 2020</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
       <div className="row">
+        <div className="col-xl-9 col-xxl-12">
+          <div className="card">
+            <Tab.Container defaultActiveKey="all-categories">
+              <div className="card-header border-0 pb-2 d-lg-flex flex-wrap d-block">
+              <div>
+                <h4 className="card-title mb-2">Most Favorites Items</h4>
+                <p className="fs-14 mb-0">Lorem ipsum dolor sit amet, consectetur</p>
+              </div>
+              <div className="card-action card-tabs mt-3 mt-3 mt-lg-0">
+                <Nav as="ul" className="nav nav-tabs" role="tablist">
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link" eventKey="all-categories" role="tab">
+                      All Categories
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link"eventKey="main-course" role="tab">
+                      Main Course
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link" eventKey="pizza" role="tab">
+                      Pizza
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link" eventKey="drink" role="tab">
+                      Drink
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link" eventKey="dessert" role="tab">
+                      Dessert
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as="li" className="nav-item">
+                    <Nav.Link className="nav-link" eventKey="more" role="tab">
+                      More
+                    </Nav.Link>
+                  </Nav.Item>													
+                </Nav>
+              </div>
+            </div>
+              <div className="card-body most-favourite-items pb-0">
+              <Tab.Content className="tab-content">
+                <Tab.Pane eventKey="all-categories" className="tab-pane fade" id="all-categories">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="75"
+                          />
+                          <small>75%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="85"
+                          />
+                          <small>85%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="45"
+                          />
+                          <small>45%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Chicken Kebab from Turkish with Garlic</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="35"
+                          />
+                          <small>35%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane eventKey="main-course" className="tab-pane fade" id="main-course">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="75"
+                          />
+                          <small>75%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3" src={card_pic2} alt="card_pic2" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="85"
+                          />
+                          <small>85%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="45"
+                          />
+                          <small>45%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane eventKey="pizza" className="tab-pane fade" id="pizza">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="85"
+                          />
+                          <small>85%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="45"
+                          />
+                          <small>45%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane eventkey="drink" className="tab-pane fade" id="drink">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                        <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="75"
+                          />
+                          <small>75%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt={card_pic9} />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic2} alt="card_pic2" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Mozarella Pizza with Random Topping</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="85"
+                          />
+                          <small>85%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="45"
+                          />
+                          <small>45%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane eventKey="dessert" className="tab-pane fade" id="dessert">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic4} alt="card_pic4" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>75%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic8} alt="card_pic8" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Extreme Deluxe Pizza Super With Mozarella</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="45"
+                          />
+                          <small>45%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane eventKey="more" className="tab-pane fade" id="more">
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Watermelon Juice with Ice</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="75"
+                          />
+                          <small>75%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic9} alt="card_pic9" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Orange Juice Special Smoothy with Sugar</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">3,515</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="21"
+                          />
+                          <small>21%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="media mb-4 align-items-center">
+                        <img className="rounded mr-3 food-img" src={card_pic11} alt="card_pic11" />
+                        <div className="media-body">
+                          <h5 className="mb-sm-4 mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="d-flex mb-2">
+                            <svg className="mr-2" width={15} height={15} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.500488" width="2.04545" height={15} rx="1.02273" fill="#EA7A9A" />
+                              <rect x="4.59131" y="4.09082" width="2.04545" height="10.9091" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="8.68213" y="10.2271" width="2.04545" height="4.77273" rx="1.02273" fill="#EA7A9A" />
+                              <rect x="12.7729" y="2.04541" width="2.04545" height="12.9545" rx="1.02273" fill="#EA7A9A" />
+                            </svg>
+                            <span className="fs-14 text-black"><strong className="mr-1">2,441</strong> Total Sales</span>
+                          </div>
+                          <div className="star-review2 d-flex align-items-center flex-wrap fs-12">
+                            <div className="mb-2">
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-orange" />
+                              <i className="fa fa-star text-gray" />
+                              <i className="fa fa-star text-gray" />
+                            </div>
+                            <span className="ml-3 text-dark mb-2">(454 revies)</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-block relative donut-chart-sale">
+                          <DoughnutChart3
+                            backgroundColor="#EA7A9A"
+                            backgroundColor2="#ECECEC"
+                            height="100"
+                            width="100"
+                            value="52"
+                          />
+                          <small>52%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+              </Tab.Content>
+            </div>
+              <div className="card-footer border-0">
+              <nav>
+                <ul className="pagination style-1 mb-0">
+                  <li className="page-item page-indicator">
+                    <Link className="page-link" to="#">
+                      <i className="la la-angle-left" />
+                    </Link>
+                  </li>
+                  <li>
+                    <ul>
+                      <li className="page-item active"><Link className="page-link" to="#">1</Link></li>
+                      <li className="page-item"><Link className="page-link" to="#">2</Link></li>
+                      <li className="page-item"><Link className="page-link" to="#">3</Link></li>
+                      <li className="page-item"><Link className="page-link" to="#">4</Link></li>
+                    </ul>
+                  </li>
+                  <li className="page-item page-indicator">
+                    <Link className="page-link" to="#">
+                      <i className="la la-angle-right" />
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            </Tab.Container>
+          </div>
+        </div>
+        <div className="col-xl-3 col-xxl-12">
+          <div className="card trending-menus">
+            <div className="card-header d-sm-flex d-block pb-0 border-0">
+              <div>
+                <h4 className="text-black fs-20">Daily Trending Menus</h4>
+                <p className="fs-13 mb-0 text-black">Lorem ipsum dolor</p>
+              </div>
+            </div>
+            <div className="card-body dz-scroll height500" id="dailyMenus">
+              <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
+                <span className="num">#1</span>
+                <div className="mr-auto pr-3">
+                  <Link to="post-details.html"><h2 className="text-black fs-14">Medium Spicy Spagethi Italiano</h2></Link>
+                  <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
+                </div>
+                <img src={menu9} alt="menu9" width={60} className="rounded" />
+              </div>
+              <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
+                <span className="num">#2</span>
+                <div className="mr-auto pr-3">
+                  <Link to="post-details.html"><h2 className="text-black fs-14">Watermelon juice with ice</h2></Link>
+                  <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
+                </div>
+                <img src={menu10} alt="menu9" width={60} className="rounded" />
+              </div>
+              <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
+                <span className="num">#3</span>
+                <div className="mr-auto pr-3">
+                  <Link to="post-details.html"><h2 className="text-black fs-14">Chicken curry special with cucumber</h2></Link>
+                  <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
+                </div>
+                <img src={menu11} alt="menu11" width={60} className="rounded" />
+              </div>
+              <div className="d-flex pb-3 mb-3 border-bottom tr-row align-items-center">
+                <span className="num">#4</span>
+                <div className="mr-auto pr-3">
+                  <Link to="post-details.html"><h2 className="text-black fs-14">Italiano Pizza With Garlic</h2></Link>
+                  <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
+                </div>
+                <img src={menu12} alt="menu12" width={60} className="rounded" />
+              </div>
+              <div className="d-flex tr-row align-items-center">
+                <span className="num">#5</span>
+                <div className="mr-auto pr-3">
+                  <Link to="post-details.html"><h2 className="text-black fs-14">Tuna Soup spinach with himalaya salt</h2></Link>
+                  <span className="text-black font-w600 d-inline-block mr-3">$5.6 </span> <span className="fs-14">Order 89x</span>
+                </div>
+                <img src={menu9} alt="menu9" width={60} className="rounded" />
+              </div>
+            </div>
+            <div className="card-footer border-0 pt-0">
+            </div>
+          </div>
+        </div>
         <div className="col-xl-6">
-          <div className="card">
-            <div className="card-header align-items-center border-0 pb-0">
-              <h3 className="fs-20 text-black">Rent Statistic</h3>
-              <Link className="btn btn-outline-primary rounded" to="/analytics">
-                Download CSV
-              </Link>
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="card">
+                <Tab.Container defaultActiveKey="monthly" >
+                  <div className="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
+                    <div>
+                      <h4 className="card-title mb-1">Most Selling Items</h4>
+                      <small className="mb-0">Lorem ipsum dolor sit amet, consectetur</small>
+                    </div>
+                    <div className="card-action card-tabs mt-3 mt-sm-0">
+                      <Nav as="ul" className="nav nav-tabs" role="tablist">
+                        <Nav.Item as="li" className="nav-item">
+                          <Nav.Link className="nav-link" eventKey="monthly" role="tab">
+                            Monthly
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item as="li" className="nav-item">
+                          <Nav.Link className="nav-link" eventKey="weekly" role="tab">
+                            Weekly
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item as="li" className="nav-item">
+                          <Nav.Link className="nav-link" eventKey="today" role="tab">
+                            Today
+                          </Nav.Link>
+                        </Nav.Item>
+                      </Nav>
+                    </div>
+                  </div>
+                  <Tab.Content className="card-body tab-content">
+                  <Tab.Pane eventKey="monthly" className="tab-pane fade" id="monthly">
+                    <div className="height500 dz-scroll loadmore-content" id="sellingItemsContent">
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5}alt="dish_pic5" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> BURGER</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$12.56</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> PIZZA</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$5.67</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$11.21</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> PIZZA</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$8.15</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;">BURGER</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$5.67</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-center bg-white pt-3">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/selling-items.html" id="sellingItems">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
+                    </div>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="weekly" className="tab-pane fade" id="weekly">
+                    <div className="height500 dz-scroll loadmore-content" id="sellingItems2Content">
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;">BURGER</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$11.21</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;">PIZZA</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$8.15</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1}alt="dish_pic1" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$5.67</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-center bg-white pt-3">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/selling-items.html" id="sellingItems2">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
+                    </div>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="today" className="tab-pane fade" id="today">
+                    <div className="height500 dz-scroll loadmore-content" id="sellingItems3Content">
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;"> JUICE</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$8.15</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                      <div className="media p-0 mb-4 alert alert-dismissible items-list-2 border-0">
+                        <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                        <div className="media-body col-6 px-0">
+                          <h5 className="mt-0 mb-1"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                          <small className="font-w500 mb-3"><Link className="text-primary" to="#;">PIZZA</Link></small>
+                          <span className="text-secondary mr-2 fo" />
+                          <ul className="fs-14 list-inline">
+                            <li className="mr-3">Serves for 4 Person</li>
+                            <li>24mins</li>
+                          </ul>
+                        </div>
+                        <div className="media-footer align-self-center ml-auto d-block align-items-center d-sm-flex">
+                          <h3 className="mb-0 font-w600 text-secondary">$5.67</h3>
+                          <Dropdown className="dropdown ml-3 ">
+                            <Dropdown.Toggle type="button" className="i-false btn btn-secondary sharp tp-btn-light " data-toggle="dropdown">
+                              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"><rect x={0} y={0} width={24} height={24} /><circle fill="#000000" cx={5} cy={12} r={2} /><circle fill="#000000" cx={12} cy={12} r={2} /><circle fill="#000000" cx={19} cy={12} r={2} /></g></svg>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                              <Dropdown.Item className="dropdown-item" to="#;">Edit</Dropdown.Item>
+                              <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item">Delete</Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-center bg-white pt-3">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/selling-items.html" id="sellingItems3">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
+                    </div>
+                  </Tab.Pane>
+                </Tab.Content>
+                </Tab.Container>
+              </div>
             </div>
-            <div className="card-body pb-0 pt-0">
-              <div className="d-flex align-items-center mb-3">
-                <span className="rounded mr-3 bg-success p-3">
-                  <svg
-                    width={26}
-                    height={26}
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z"
-                      fill="white"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p className="fs-14 mb-1">Total Rent</p>
-                  <span className="fs-18 text-black font-w700">1,252 Unit</span>
+            <div className="col-xl-12">
+              <div className="card">
+                <div className="card-header border-0 pb-0 d-sm-flex d-block">
+                  <div>
+                    <h4 className="card-title mb-1">Trending Items</h4>
+                    <small className="mb-0">Lorem ipsum dolor sit amet, consectetur</small>
+                  </div>
+                  <Dropdown className="dropdown mt-3 mt-sm-0">
+                    <Dropdown.Toggle type="button" className="btn btn-primary dropdown-toggle light fs-14" data-toggle="dropdown" aria-expanded="false">
+                      Weekly
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="dropdown-menu">
+                      <Dropdown.Item className="dropdown-item" to="#;">Daily</Dropdown.Item>
+                      <Dropdown.Item className="dropdown-item" to="#;">Weekly</Dropdown.Item>
+                      <Dropdown.Item className="dropdown-item" to="#;">Monthly</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="card-body p-0 pt-3">
+                  <div className="media items-list-1">
+                    <span className="number col-1 px-0 align-self-center">#1</span>
+                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic1} alt="dish_pic1" /></Link>
+                    <div className="media-body col-sm-4 col-xxl-5 px-0">
+                      <h5 className="mt-0 mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
+                    </div>
+                    <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
+                      <div className="mr-3">
+                        <span className="peity-success" data-style="width:100%;" style={{display: 'none'}}>0,2,1,4</span><svg className="peity" height={30} width={47}><polygon fill="rgba(48, 194, 89, .2)" points="0 28.5 0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5 47 28.5" /><polyline fill="none" points="0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5" stroke="#30c259" strokeWidth={3} strokeLinecap="square" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="mb-0 font-w600 text-black">524</h3>
+                        <span className="fs-14">Sales (12%)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="media items-list-1">
+                    <span className="number col-1 px-0 align-self-center">#2</span>
+                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic2} alt="dish_pic2" /></Link>
+                    <div className="media-body col-sm-4 col-xxl-5 px-0">
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">JUICE</Link></small>
+                    </div>
+                    <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
+                      <div className="mr-3">
+                        <span className="peity-danger" data-style="width:100%;" style={{display: 'none'}}>4,1,2,0</span><svg className="peity" height={30} width={47}><polygon fill="rgba(248, 79, 78, .2)" points="0 28.5 0 1.5 15.666666666666666 21.75 31.333333333333332 15 47 28.5 47 28.5" /><polyline fill="none" points="0 1.5 15.666666666666666 21.75 31.333333333333332 15 47 28.5" stroke="#f84f4e" strokeWidth={3} strokeLinecap="square" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="mb-0 font-w600 text-black">215</h3>
+                        <span className="fs-14">Sales (12%)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="media items-list-1">
+                    <span className="number col-1 px-0 align-self-center">#3</span>
+                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic3} alt="dish_pic3" /></Link>
+                    <div className="media-body col-sm-4 col-xxl-5 px-0">
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Chicken curry special with cucumber</Link></h5>
+                      <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
+                    </div>
+                    <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
+                      <div className="mr-3">
+                        <span className="peity-success" data-style="width:100%;" style={{display: 'none'}}>0,2,1,4</span><svg className="peity" height={30} width={47}><polygon fill="rgba(48, 194, 89, .2)" points="0 28.5 0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5 47 28.5" /><polyline fill="none" points="0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5" stroke="#30c259" strokeWidth={3} strokeLinecap="square" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="mb-0 font-w600 text-black">524</h3>
+                        <span className="fs-14">Sales (12%)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="media items-list-1">
+                    <span className="number col-1 px-0 align-self-center">#4</span>
+                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic4} alt="dish_pic4" /></Link>
+                    <div className="media-body col-sm-4 col-xxl-5 px-0">
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Watermelon juice with ice</Link></h5>
+                      <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">PIZZA</Link></small>
+                    </div>
+                    <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
+                      <div className="mr-3">
+                        <span className="peity-success" data-style="width:100%;" style={{display: 'none'}}>0,2,1,4</span><svg className="peity" height={30} width={47}><polygon fill="rgba(48, 194, 89, .2)" points="0 28.5 0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5 47 28.5" /><polyline fill="none" points="0 28.5 15.666666666666666 15 31.333333333333332 21.75 47 1.5" stroke="#30c259" strokeWidth={3} strokeLinecap="square" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="mb-0 font-w600 text-black">76</h3>
+                        <span className="fs-14">Sales (12%)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="media items-list-1">
+                    <span className="number col-1 px-0 align-self-center">#5</span>
+                    <Link to="ecom-product-detail.html"><img className="img-fluid rounded mr-3" width={85} src={dish_pic5} alt="dish_pic5" /></Link>
+                    <div className="media-body col-sm-4 col-xxl-5 px-0">
+                      <h5 className="mt-0 mb-3 text-black"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                      <small className="font-w500"><strong className="text-secondary mr-2">$12.56</strong> <Link className="text-primary" to="#;">BURGER</Link></small>
+                    </div>
+                    <div className="media-footer ml-auto col-sm-3 mt-sm-0 mt-3 px-0 d-flex align-self-center align-items-center">
+                      <div className="mr-3">
+                        <span className="peity-danger" data-style="width:100%;" style={{display: 'none'}}>4,1,2,0</span><svg className="peity" height={30} width={47}><polygon fill="rgba(248, 79, 78, .2)" points="0 28.5 0 1.5 15.666666666666666 21.75 31.333333333333332 15 47 28.5 47 28.5" /><polyline fill="none" points="0 1.5 15.666666666666666 21.75 31.333333333333332 15 47 28.5" stroke="#f84f4e" strokeWidth={3} strokeLinecap="square" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="mb-0 font-w600 text-black">180</h3>
+                        <span className="fs-14">Sales (12%)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* <div id='chartBar' /> */}
-              <ChartBar1 />
             </div>
           </div>
         </div>
         <div className="col-xl-6">
-          <div className="card">
-            <div className="card-header align-items-center border-0 pb-0">
-              <h3 className="fs-20 text-black">Sales Statistic</h3>
-              <Link className="btn btn-outline-primary rounded" to="/analytics">
-                Download CSV
-              </Link>
-            </div>
-            <div className="card-body pb-0 pt-0">
-              <div className="d-flex align-items-center mb-3">
-                <span className="rounded mr-3 bg-primary p-3">
-                  <svg
-                    width={26}
-                    height={26}
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z"
-                      fill="white"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p className="fs-14 mb-1">Total Sale</p>
-                  <span className="fs-18 text-black font-w700">2,346 Unit</span>
-                </div>
-              </div>
-              {/* <div id='chartBar2' /> */}
-              <ChartBar2 />
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6 col-xxl-12">
-          <div className="card">
-            <div className="card-header border-0 pb-0">
-              <h3 className="fs-20 text-black">Total Revenue</h3>
-              <Dropdown className="dropdown ml-auto">
-                <Dropdown.Toggle
-                  variant=""
-                  className="btn-link   i-false p-0"
-                  data-toggle="dropdown"
-                >
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    version="1.1"
-                  >
-                    <g
-                      stroke="none"
-                      strokeWidth={1}
-                      fill="none"
-                      fillRule="evenodd"
-                    >
-                      <rect x={0} y={0} width={24} height={24} />
-                      <circle fill="#000000" cx={5} cy={12} r={2} />
-                      <circle fill="#000000" cx={12} cy={12} r={2} />
-                      <circle fill="#000000" cx={19} cy={12} r={2} />
-                    </g>
-                  </svg>
-                </Dropdown.Toggle>
-                <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                  <Dropdown.Item className="dropdown-item" to="/analytics">
-                    Edit
-                  </Dropdown.Item>
-                  <Dropdown.Item className="dropdown-item" to="/analytics">
-                    Delete
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="card-body pt-2 pb-0">
-              <div className="d-flex flex-wrap align-items-center">
-                <span className="fs-36 text-black font-w600 mr-3">
-                  $678,345
-                </span>
-                <p className="mr-sm-auto mr-3 mb-sm-0 mb-3">
-                  last month $563,443
-                </p>
-                <div className="d-flex align-items-center">
-                  <svg
-                    className="mr-3"
-                    width={87}
-                    height={47}
-                    viewBox="0 0 87 47"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M29.8043 20.9254C15.2735 14.3873 5.88029 27.282 3 34.5466V46.2406H85V4.58005C70.8925 -0.868404 70.5398 8.66639 60.8409 19.5633C51.1419 30.4602 47.9677 29.0981 29.8043 20.9254Z"
-                      fill="url(#paint0_linear)"
-                    />
-                    <path
-                      d="M3 35.2468C5.88029 27.9822 15.2735 15.0875 29.8043 21.6257C47.9677 29.7984 51.1419 31.1605 60.8409 20.2636C70.5398 9.36665 70.8925 -0.168147 85 5.28031"
-                      stroke="#37D159"
-                      strokeWidth={6}
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear"
-                        x1={44}
-                        y1="-36.4332"
-                        x2={44}
-                        y2="45.9686"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="#37D159" />
-                        <stop offset={1} stopColor="#37D159" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <span className="fs-22 text-success mr-2">7%</span>
-                  <svg
-                    width={12}
-                    height={6}
-                    viewBox="0 0 12 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M0 6L6 2.62268e-07L12 6" fill="#37D159" />
-                  </svg>
-                </div>
-              </div>
-              {/* <div id='chartTimeline' /> */}
-              <ChartTimeLine />
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6 col-xxl-12">
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-xl-12">
               <div className="card">
-                <div className="card-body">
-                  <div className="media align-items-center">
-                    <div className="media-body mr-3">
-                      <h2 className="fs-36 text-black font-w600">2,356</h2>
-                      <p className="fs-18 mb-0 text-black font-w500">
-                        Properties for Sale
-                      </p>
-                      <span className="fs-13">Target 3k/month</span>
+                <div className="card-header border-0 pb-0 d-sm-flex d-block">
+                  <div>
+                    <h4 className="card-title mb-1">Chart Orders</h4>
+                    <small className="mb-0">Lorem ipsum dolor sit amet, consectetur</small>
+                  </div>
+                  <Dropdown className="dropdown mt-3 mt-sm-0">
+                    <Dropdown.Toggle type="button" className="btn btn-primary dropdown-toggle light fs-14" data-toggle="dropdown" aria-expanded="false">
+                      Weekly
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="dropdown-menu">
+                      <Dropdown.Item className="dropdown-item" to="#;">Daily</Dropdown.Item>
+                      <Dropdown.Item className="dropdown-item" to="#;">Weekly</Dropdown.Item>
+                      <Dropdown.Item className="dropdown-item" to="#;">Monthly</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="card-body revenue-chart px-3 pb-0">
+                  <div className="d-flex align-items-end pl-3">
+                    <div className="mr-4">
+                      <h3 className="font-w600 mb-0"><img src={IcStat3} height={22} width={22} className="mr-2 mb-1" alt="IcStat3" />
+                        <span className="counter">257</span>k
+                      </h3>
+                      <small className="text-dark fs-14">Total Sales</small>
                     </div>
-                    <div className="d-inline-block position-relative donut-chart-sale">
-                      <AnalyticsDonutChart
-                        value={71}
-                        backgroundColor="#3C4CB8"
-                      />
-                      <small className="text-primary">71%</small>
-                      <span className="circle bgl-primary" />
+                    <div>
+                      <h3 className="font-w600 mb-0"><img src={IcStat3} height={22} width={22} className="mr-2 mb-1" alt="IcStat3" /><span className="counter">1,245</span></h3>
+                      <small className="text-dark fs-14">Avg. Sales per day</small>
                     </div>
                   </div>
+                  <ActivityLineChart />
                 </div>
               </div>
             </div>
-            <div className="col-sm-6">
+            <div className="col-xl-12">
               <div className="card">
-                <div className="card-body">
-                  <div className="media align-items-center">
-                    <div className="media-body mr-3">
-                      <h2 className="fs-36 text-black font-w600">2,206</h2>
-                      <p className="fs-18 mb-0 text-black font-w500">
-                        Properties for Rent
-                      </p>
-                      <span className="fs-13">Target 3k/month</span>
+                <Tab.Container defaultActiveKey="monthly" >
+                  <div className="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
+                    <div>
+                      <h4 className="card-title mb-1">Most Favorites Items</h4>
+                      <small className="mb-0">Lorem ipsum dolor sit amet, consectetur</small>
                     </div>
-                    <div className="d-inline-block position-relative donut-chart-sale">
-                      <AnalyticsDonutChart
-                        value={90}
-                        backgroundColor="#37D15A"
-                      />
-                      <small className="text-success">90%</small>
-                      <span className="circle bgl-success" />
+                    <div className="card-action card-tabs">
+                      <Nav as="ul" className="nav nav-tabs" role="tablist">
+                        <Nav.Item as="li" className="nav-item"><Nav.Link className="nav-link"  eventKey="monthly">Monthly</Nav.Link></Nav.Item>
+                        <Nav.Item as="li" className="nav-item"><Nav.Link className="nav-link"  eventKey="weekly">Weekly</Nav.Link></Nav.Item>
+                        <Nav.Item as="li" className="nav-item"><Nav.Link className="nav-link"  eventKey="today">Today</Nav.Link></Nav.Item>
+                      </Nav>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <div className="card">
-                <div className="card-header align-items-center border-0 pb-0">
-                  <span className="fs-36 text-black pr-3 d-flex align-items-center font-w600 mr-auto">
-                    34%
-                    <svg
-                      className="ml-1"
-                      width={14}
-                      height={8}
-                      viewBox="0 0 14 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.90735e-06 0.499999L7 7.5L14 0.5"
-                        fill="#FF6746"
-                      />
-                    </svg>
-                  </span>
-                  <span className="fs-18 text-black">Target This Month</span>
-                </div>
-                <div className="card-body p-0">
-                  {/* <canvas id="widgetChart1" className="max-h80" /> */}
-                  <WidgetChart1 />
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <div className="card">
-                <div className="card-header align-items-center border-0 pb-0">
-                  <span className="fs-36 text-black font-w600 mr-auto">
-                    4%
-                    <svg
-                      className="ml-1"
-                      width={14}
-                      height={8}
-                      viewBox="0 0 14 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.90735e-06 7.5L7 0.499999L14 7.5"
-                        fill="#37D159"
-                      />
-                    </svg>
-                  </span>
-                  <span className="fs-18 text-black">Customers</span>
-                </div>
-                <div className="card-body p-0">
-                  {/* <canvas id="widgetChart2" className="max-h80" /> */}
-                  <WidgetChart2 />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-3">
-          <div className="row">
-            <div className="col-xl-12 col-sm-6">
-              <div className="card">
-                <div className="card-body">
-                  <p className="mb-2 d-flex  fs-16 text-black font-w500">
-                    Product Viewed
-                    <span className="pull-right ml-auto text-dark fs-14">
-                      561/days
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-secondary progress-animated"
-                      style={{ width: "75%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">75% Complete</span>
+                  <Tab.Content className="card-body tab-content">
+                  <Tab.Pane eventKey="monthly" className="tab-pane fade" id="monthly1">
+                    <div className="row height750 dz-scroll loadmore-content" id="favourite-itemsContent">
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <p className="mb-2 d-flex  fs-16 text-black font-w500">
-                    Product Listed
-                    <span className="pull-right ml-auto text-dark fs-14">
-                      3,456 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-3" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-secondary progress-animated"
-                      style={{ width: "90%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">90% Complete</span>
+                    <div className="bg-white pt-3 text-center">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/favourite-items.html" id="favourite-items">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-12 col-sm-6">
-              <div className="card">
-                <div className="card-body">
-                  {/* <div id="chartratio" /> */}
-                  <RedialBar />
-                  <div className="d-flex mt-3">
-                    <span className="text-black font-w600 mr-5">
-                      <svg
-                        className="mr-2"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width={20} height={20} rx={8} fill="#3B4CB8" />
-                      </svg>
-                      Usage
-                    </span>
-                    <span className="text-black font-w600">
-                      <svg
-                        className="mr-2"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width={20} height={20} rx={8} fill="#B655E4" />
-                      </svg>
-                      Insight
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-9">
-          <div className="card">
-            <div className="card-header border-0 pb-0">
-              <h3 className="fs-20 text-black">Properties Map Location</h3>
-              <Dropdown className="dropdown ml-auto">
-                <Dropdown.Toggle
-                  variant=""
-                  className="btn-link   i-false p-0"
-                  data-toggle="dropdown"
-                >
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    version="1.1"
-                  >
-                    <g
-                      stroke="none"
-                      strokeWidth={1}
-                      fill="none"
-                      fillRule="evenodd"
-                    >
-                      <rect x={0} y={0} width={24} height={24} />
-                      <circle fill="#000000" cx={5} cy={12} r={2} />
-                      <circle fill="#000000" cx={12} cy={12} r={2} />
-                      <circle fill="#000000" cx={19} cy={12} r={2} />
-                    </g>
-                  </svg>
-                </Dropdown.Toggle>
-                <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                  <Dropdown.Item className="dropdown-item" to="/analytics">
-                    Edit
-                  </Dropdown.Item>
-                  <Dropdown.Item className="dropdown-item" to="/analytics">
-                    Delete
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="card-body" style={{ minHeight: "400px" }}>
-              <div className="row">
-                <div className="col-lg-3 col-md-4">
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    Europe
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "75%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">75% Complete</span>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="weekly" className="tab-pane fade" id="weekly1">
+                    <div className="row height750 dz-scroll loadmore-content" id="favourite-items2Content">
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic7} className="rounded w-100" alt="dish_pic7" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic9} className="rounded w-100" alt="dish_pic9" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Pizza Meal for Kids (Small size)</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic10} className="rounded w-100" alt="dish_pic10" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Meidum Spicy Spagethi Italiano</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic6} className="rounded w-100" alt="dish_pic6" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    Asia
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "100%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">100% Complete</span>
+                    <div className="bg-white pt-3 text-center">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/favourite-items.html" id="favourite-items2">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
                     </div>
-                  </div>
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    Africa
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "75%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">75% Complete</span>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="today" className="tab-pane fade" id="today1">
+                    <div className="row height750 dz-scroll loadmore-content" id="favourite-items3Content">
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic8} className="rounded w-100" alt="dish_pic8" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Tuna soup spinach with himalaya salt</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
+                      <div className="col-md-4 col-xl-4 col-xxl-6 col-sm-6 mb-5">
+                        <div className="media mb-4">
+                          <Link to="ecom-product-detail.html"><img src={dish_pic11} className="rounded w-100" alt="dish_pic11" /></Link>
+                        </div>
+                        <div className="info">
+                          <h5 className="text-black mb-3"><Link className="text-black" to="ecom-product-detail.html">Medium Spicy Pizza with Kemangi Leaf</Link></h5>
+                          <div className="star-review fs-14 mb-3">
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-orange" />
+                            <i className="fa fa-star text-gray" />
+                            <i className="fa fa-star text-gray" />
+                            <span className="ml-3 text-dark">451 reviews</span>
+                          </div>
+                          <Link to="#;" className="btn btn-primary light btn-sm btn-rounded px-4"><i className="fa fa-heart-o mr-2 scale5 " /> <strong>256k</strong> Like it</Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    Australia
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "50%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">50% Complete</span>
+                    <div className="bg-white pt-3 text-center">
+                      <Link to="#;" className="btn-link dz-load-more" rel="ajax/favourite-items.html" id="favourite-items3">View more <i className="fa fa-angle-down ml-2 scale-2" /></Link>
                     </div>
-                  </div>
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    America
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "70%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">70% Complete</span>
-                    </div>
-                  </div>
-                  <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                    South America
-                    <span className="pull-right text-dark fs-14 ml-2">
-                      653 Unit
-                    </span>
-                  </p>
-                  <div className="progress mb-4" style={{ height: 10 }}>
-                    <div
-                      className="progress-bar bg-primary progress-animated"
-                      style={{ width: "40%", height: 10 }}
-                      role="progressbar"
-                    >
-                      <span className="sr-only">40% Complete</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-9 col-md-8">
-                  {/* <div id="world-map" /> */}
-                  <div className="analytics-map">
-                    <SVGMap map={World} />
-                  </div>
-                </div>
+                  </Tab.Pane>
+                </Tab.Content>
+                </Tab.Container>
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  );
+    );
 }
 
 export default Analytics;

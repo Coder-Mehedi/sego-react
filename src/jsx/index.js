@@ -13,11 +13,11 @@ import Nav from "./layouts/nav";
 import Footer from "./layouts/Footer";
 /// Dashboard
 import Home from "./components/Dashboard/Home";
-// import Analytics from "./components/Dashboard/Analytics";
-// import OrderList from "./components/Dashboard/OrderList";
-// import CustomerList from "./components/Dashboard/CustomerList";
-// import Reviews from "./components/Dashboard/Reviews";
-// import PropertyDetails from "./components/Dashboard/PropertyDetails";
+import Orders from "./components/Dashboard/Orders";
+import OrderId from "./components/Dashboard/OrderId";
+import GeneralCustomers from "./components/Dashboard/GeneralCustomers";
+import Analytics from "./components/Dashboard/Analytics";
+import Reviews from "./components/Dashboard/Reviews";
 
 /// App
 import AppProfile from "./components/AppsMenu/AppProfile/AppProfile";
@@ -99,11 +99,11 @@ const Markup = () => {
   const routes = [
     /// Dashboard
     { url: "", component: Home },
-    // { url: "analytics", component: Analytics },
-    // { url: "review", component: Reviews },
-    // { url: "order-list", component: OrderList },
-    // { url: "customer-list", component: CustomerList },
-    // { url: "property-details", component: PropertyDetails },
+    { url: "orders", component: Orders },
+    { url: "Order-id", component: OrderId },
+    { url: "general-customers", component: GeneralCustomers },
+    { url: "analytics", component: Analytics },
+    { url: "review", component: Reviews },
 
     /// Apps
     { url: "app-profile", component: AppProfile },

@@ -144,7 +144,7 @@ const Header = ({ onNote }) => {
                       <li>
                         <div className="timeline-panel">
                           <div className="media mr-2">
-                            <img alt="image" width={50} src={avatar} />
+                            <img alt="avatar" width={50} src={avatar} />
                           </div>
                           <div className="media-body">
                             <h6 className="mb-1">Dr sultads Send you Photo</h6>
