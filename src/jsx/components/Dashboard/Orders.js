@@ -65,363 +65,362 @@ function Orders() {
   return (
     <>
       <div className="modal fade" id="addOrderModalside">
-    <div className="modal-dialog" role="document">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Add Menus</h5>
-          <button type="button" className="close" data-dismiss="modal"><span>×</span>
-          </button>
-        </div>
-        <div className="modal-body">
-          <form>
-            <div className="form-group">
-              <label className="text-black font-w500">Food Name</label>
-              <input type="text" className="form-control" />
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Add Menus</h5>
+              <button type="button" className="close" data-dismiss="modal"><span>×</span>
+              </button>
             </div>
-            <div className="form-group">
-              <label className="text-black font-w500">Order Date</label>
-              <input type="date" className="form-control" />
+            <div className="modal-body">
+              <form>
+                <div className="form-group">
+                  <label className="text-black font-w500">Food Name</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label className="text-black font-w500">Order Date</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label className="text-black font-w500">Food Price</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="form-group">
+                  <button type="button" className="btn btn-primary">Submit</button>
+                </div>
+              </form>
             </div>
-            <div className="form-group">
-              <label className="text-black font-w500">Food Price</label>
-              <input type="text" className="form-control" />
-            </div>
-            <div className="form-group">
-              <button type="button" className="btn btn-primary">Submit</button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
       <div className="d-sm-flex mb-lg-4 mb-2">
-    <Dropdown className="dropdown mb-2 ml-auto mr-3">
-      <Dropdown.Toggle to="#" className="i-false btn btn-primary btn-rounded light" data-toggle="dropdown" aria-expanded="false">
-        <i className="las la-bolt scale5 mr-3" />
-        All Status
-        <i className="las la-angle-down ml-3" />
-      </Dropdown.Toggle>
-      <Dropdown.Menu className="dropdown-menu dropdown-menu-center">
-        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">On Delivery</span></Dropdown.Item>
-        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">New Order</span></Dropdown.Item>
-        <Dropdown.Item className="dropdown-item" to="#;"><span className="text-success">Delivery</span></Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-    <input className="d-inline-block form-control date-button btn btn-primary light btn-rounded" id="timepicker" placeholder="Today" />
-  </div>
-      <div className="row">
-    <div className="col-lg-12">
-      <div className="table-responsive rounded card-table">
-        <table className="table border-no order-table mb-4 table-responsive-lg dataTablesCard" id="example5">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Date</th>
-              <th>Customer Name</th>
-              <th>Location</th>
-              <th>Amount</th>
-              <th>Status Order</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552375</td>
-              <td>26 March 2020, 02:12 AM</td>
-              <td>Emilia Johanson</td>
-              <td>67 St. John’s Road London</td>
-              <td>$251.16</td>
-              <td>
-                <span className="text-primary">
-                  <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
-                  </svg>On Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" className="nav-link  ai-icon" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552356</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Rendy Greenlee</td>
-              <td>32 The Green London</td>
-              <td>$44.99</td>
-              <td>
-                <span className="text-primary">New Order</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552388</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Jessica Wong</td>
-              <td>11 Church Road London</td>
-              <td>$24.17</td>
-              <td>
-                <span className="text-primary">
-                  <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
-                  </svg>On Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552323</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Veronica</td>
-              <td>21 King Street London</td>
-              <td>$74.92</td>
-              <td>
-                <span className="text-primary">New Order</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552322</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Samantha Bake</td>
-              <td>79 The Drive London</td>
-              <td>$22.18</td>
-              <td>
-                <span className="text-primary">
-                  <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
-                  </svg>On Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552358</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>David Horison</td>
-              <td>981 St. John’s Road London</td>
-              <td>$24.17</td>
-              <td>
-                <span className="text-primary">
-                  <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
-                  </svg>On Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552311</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Olivia Shine</td>
-              <td>35 Station Road London</td>
-              <td>$82.46</td>
-              <td>
-                <span className="text-primary">
-                  <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
-                  </svg>On Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552351</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>James WItcwicky</td>
-              <td>Corner Street 5th London</td>
-              <td>$164.52</td>
-              <td>
-                <span className="text-success">Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552349</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Roberto Carlo</td>
-              <td>544 Manor Road London</td>
-              <td>$34.41</td>
-              <td>
-                <span className="text-success">Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552397</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Franky Sihotang</td>
-              <td>6 The Avenue London</td>
-              <td>$45.86</td>
-              <td>
-                <span className="text-success">Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-            <tr className="alert alert-dismissible border-0">
-              <td>#5552397</td>
-              <td>26 March 2020, 12:42 AM</td>
-              <td>Franky Sihotang</td>
-              <td>6 The Avenue London</td>
-              <td>$45.86</td>
-              <td>
-                <span className="text-success">Delivery</span>
-              </td>
-              <td>
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle to="#" data-toggle="dropdown" aria-expanded="false">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
-                    <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
-                    <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <Dropdown className="dropdown mb-2 ml-auto mr-3">
+          <Dropdown.Toggle to="#" className="i-false btn btn-primary btn-rounded light" data-toggle="dropdown" aria-expanded="false">
+            <i className="las la-bolt scale5 mr-3" />
+            All Status
+            <i className="las la-angle-down ml-3" />
+          </Dropdown.Toggle>
+          <Dropdown.Menu className="dropdown-menu dropdown-menu-center">
+            <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">On Delivery</span></Dropdown.Item>
+            <Dropdown.Item className="dropdown-item" to="#;"><span className="text-primary">New Order</span></Dropdown.Item>
+            <Dropdown.Item className="dropdown-item" to="#;"><span className="text-success">Delivery</span></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <input className="d-inline-block form-control date-button btn btn-primary light btn-rounded" id="timepicker" placeholder="Today" />
       </div>
-    </div>
-  </div>
+      <div className="row">
+        <div className="col-lg-12">
+          <div className="table-responsive rounded card-table">
+            <table className="table border-no order-table mb-4 table-responsive-lg dataTablesCard" id="example5">
+              <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Customer Name</th>
+                    <th>Location</th>
+                    <th>Amount</th>
+                    <th>Status Order</th>
+                    <th />
+                  </tr>
+                </thead>
+              <tbody>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552375</td>
+                    <td>26 March 2020, 02:12 AM</td>
+                    <td>Emilia Johanson</td>
+                    <td>67 St. John’s Road London</td>
+                    <td>$251.16</td>
+                    <td>
+                      <span className="text-primary">
+                        <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
+                        </svg>On Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu-right">
+                          <Dropdown.Item className="" href="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item href="#;" data-dismiss="alert" aria-label="Close" className=""><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552356</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Rendy Greenlee</td>
+                    <td>32 The Green London</td>
+                    <td>$44.99</td>
+                    <td>
+                      <span className="text-primary">New Order</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552388</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Jessica Wong</td>
+                    <td>11 Church Road London</td>
+                    <td>$24.17</td>
+                    <td>
+                      <span className="text-primary">
+                        <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
+                        </svg>On Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552323</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Veronica</td>
+                    <td>21 King Street London</td>
+                    <td>$74.92</td>
+                    <td>
+                      <span className="text-primary">New Order</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552322</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Samantha Bake</td>
+                    <td>79 The Drive London</td>
+                    <td>$22.18</td>
+                    <td>
+                      <span className="text-primary">
+                        <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
+                        </svg>On Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552358</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>David Horison</td>
+                    <td>981 St. John’s Road London</td>
+                    <td>$24.17</td>
+                    <td>
+                      <span className="text-primary">
+                        <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
+                        </svg>On Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552311</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Olivia Shine</td>
+                    <td>35 Station Road London</td>
+                    <td>$82.46</td>
+                    <td>
+                      <span className="text-primary">
+                        <svg className="mr-2" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx={6} cy={6} r={6} fill="#EA7A9A" />
+                        </svg>On Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552351</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>James WItcwicky</td>
+                    <td>Corner Street 5th London</td>
+                    <td>$164.52</td>
+                    <td>
+                      <span className="text-success">Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552349</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Roberto Carlo</td>
+                    <td>544 Manor Road London</td>
+                    <td>$34.41</td>
+                    <td>
+                      <span className="text-success">Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552397</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Franky Sihotang</td>
+                    <td>6 The Avenue London</td>
+                    <td>$45.86</td>
+                    <td>
+                      <span className="text-success">Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                  <tr className="alert alert-dismissible border-0">
+                    <td>#5552397</td>
+                    <td>26 March 2020, 12:42 AM</td>
+                    <td>Franky Sihotang</td>
+                    <td>6 The Avenue London</td>
+                    <td>$45.86</td>
+                    <td>
+                      <span className="text-success">Delivery</span>
+                    </td>
+                    <td>
+                      <Dropdown className="dropdown">
+                        <Dropdown.Toggle className="i-false bg-false" to="#" data-toggle="dropdown" aria-expanded="false">
+                          <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                          <Dropdown.Item className="dropdown-item" to="#;"><i className="las la-check-circle text-success mr-3 scale5" />Accept Order</Dropdown.Item>
+                          <Dropdown.Item to="#;" data-dismiss="alert" aria-label="Close" className="dropdown-item"><i className="las la-times-circle text-danger mr-3 scale5" />Reject Order</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </>
-
   )
 }
 

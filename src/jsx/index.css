@@ -1,3 +1,7 @@
+.bg-false{
+  background-color: transparent !important;
+  border: transparent !important;
+}
 /* map */
 .analytics-map svg.svg-map {
   max-height: 400px;
@@ -100,7 +104,6 @@
 i.fa.fa-star.text-primary {
   padding: 0 4px;
 }
-/* Omah end */
 
 /* ////////////////////////fixed */
 .fc-toolbar-chunk {
